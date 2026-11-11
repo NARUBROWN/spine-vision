@@ -1,0 +1,309 @@
+{
+  "source": "https://dbarchive.biosciencedbc.jp/data/bodyparts3d/LATEST/partof_BP3D_4.0_obj_99.zip",
+  "source_sha256": "9fbc713fffeee924a5a657d9813d84d7eb957bded63adb854931dd5e3eb61c97",
+  "license": "CC-BY-4.0",
+  "license_url": "https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html",
+  "original_header_license": "CC-BY-SA-2.1-JP",
+  "modifications": [
+    "Spinal column selection",
+    "Coordinate rotation and normalization",
+    "Individual pivot centering",
+    "Ivory and mint materials",
+    "glTF 2.0 binary export"
+  ],
+  "bone_parts": 25,
+  "disc_parts": 23,
+  "triangles": 124220,
+  "bytes": 2988720,
+  "sha256": "22e4df3c444abd707c66255c1f04a4775b6ad70f28bd6714f5dd5aafd5991884",
+  "parts": [
+    {
+      "id": "FJ3176",
+      "name": "Atlas",
+      "kind": "bone",
+      "triangles": 2094
+    },
+    {
+      "id": "FJ3177",
+      "name": "Axis",
+      "kind": "bone",
+      "triangles": 2288
+    },
+    {
+      "id": "FJ3202",
+      "name": "Intervertebral disk of axis",
+      "kind": "disc",
+      "triangles": 3712
+    },
+    {
+      "id": "FJ3161",
+      "name": "Third cervical vertebra",
+      "kind": "bone",
+      "triangles": 2030
+    },
+    {
+      "id": "FJ3213",
+      "name": "Intervertebral disk of third cervical vertebra",
+      "kind": "disc",
+      "triangles": 770
+    },
+    {
+      "id": "FJ3164",
+      "name": "Fourth cervical vertebra",
+      "kind": "bone",
+      "triangles": 2410
+    },
+    {
+      "id": "FJ3218",
+      "name": "Intervertebral disk of fourth cervical vertebra",
+      "kind": "disc",
+      "triangles": 926
+    },
+    {
+      "id": "FJ3167",
+      "name": "Fifth cervical vertebra",
+      "kind": "bone",
+      "triangles": 2196
+    },
+    {
+      "id": "FJ3219",
+      "name": "Intervertebral disk of fifth cervical vertebra",
+      "kind": "disc",
+      "triangles": 956
+    },
+    {
+      "id": "FJ3170",
+      "name": "Sixth cervical vertebra",
+      "kind": "bone",
+      "triangles": 2374
+    },
+    {
+      "id": "FJ3220",
+      "name": "Intervertebral disk of sixth cervical vertebra",
+      "kind": "disc",
+      "triangles": 892
+    },
+    {
+      "id": "FJ3172",
+      "name": "Seventh cervical vertebra",
+      "kind": "bone",
+      "triangles": 1820
+    },
+    {
+      "id": "FJ3221",
+      "name": "Intervertebral disk of seventh cervical vertebra",
+      "kind": "disc",
+      "triangles": 1092
+    },
+    {
+      "id": "FJ3158",
+      "name": "First thoracic vertebra",
+      "kind": "bone",
+      "triangles": 1700
+    },
+    {
+      "id": "FJ3222",
+      "name": "Intervertebral disk of first thoracic vertebra",
+      "kind": "disc",
+      "triangles": 1232
+    },
+    {
+      "id": "FJ3160",
+      "name": "Second thoracic vertebra",
+      "kind": "bone",
+      "triangles": 1938
+    },
+    {
+      "id": "FJ3223",
+      "name": "Intervertebral disk of second thoracic vertebra",
+      "kind": "disc",
+      "triangles": 1374
+    },
+    {
+      "id": "FJ3163",
+      "name": "Third thoracic vertebra",
+      "kind": "bone",
+      "triangles": 2038
+    },
+    {
+      "id": "FJ3224",
+      "name": "Intervertebral disk of third thoracic vertebra",
+      "kind": "disc",
+      "triangles": 1474
+    },
+    {
+      "id": "FJ3166",
+      "name": "Fourth thoracic vertebra",
+      "kind": "bone",
+      "triangles": 2066
+    },
+    {
+      "id": "FJ3203",
+      "name": "Intervertebral disk of fourth thoracic vertebra",
+      "kind": "disc",
+      "triangles": 1560
+    },
+    {
+      "id": "FJ3169",
+      "name": "Fifth thoracic vertebra",
+      "kind": "bone",
+      "triangles": 2280
+    },
+    {
+      "id": "FJ3204",
+      "name": "Intervertebral disk of fifth thoracic vertebra",
+      "kind": "disc",
+      "triangles": 1836
+    },
+    {
+      "id": "FJ3171",
+      "name": "Sixth thoracic vertebra",
+      "kind": "bone",
+      "triangles": 2248
+    },
+    {
+      "id": "FJ3205",
+      "name": "Intervertebral disk of sixth thoracic vertebra",
+      "kind": "disc",
+      "triangles": 2564
+    },
+    {
+      "id": "FJ3173",
+      "name": "Seventh thoracic vertebra",
+      "kind": "bone",
+      "triangles": 2574
+    },
+    {
+      "id": "FJ3206",
+      "name": "Intervertebral disk of seventh thoracic vertebra",
+      "kind": "disc",
+      "triangles": 2630
+    },
+    {
+      "id": "FJ3174",
+      "name": "Eighth thoracic vertebra",
+      "kind": "bone",
+      "triangles": 2424
+    },
+    {
+      "id": "FJ3207",
+      "name": "Intervertebral disk of eighth thoracic vertebra",
+      "kind": "disc",
+      "triangles": 2894
+    },
+    {
+      "id": "FJ3175",
+      "name": "Ninth thoracic vertebra",
+      "kind": "bone",
+      "triangles": 2586
+    },
+    {
+      "id": "FJ3208",
+      "name": "Intervertebral disk of ninth thoracic vertebra",
+      "kind": "disc",
+      "triangles": 2940
+    },
+    {
+      "id": "FJ3154",
+      "name": "Tenth thoracic vertebra",
+      "kind": "bone",
+      "triangles": 2790
+    },
+    {
+      "id": "FJ3209",
+      "name": "Intervertebral disk of tenth thoracic vertebra",
+      "kind": "disc",
+      "triangles": 3102
+    },
+    {
+      "id": "FJ3155",
+      "name": "Eleventh thoracic vertebra",
+      "kind": "bone",
+      "triangles": 2674
+    },
+    {
+      "id": "FJ3210",
+      "name": "Intervertebral disk of eleventh thoracic vertebra",
+      "kind": "disc",
+      "triangles": 3336
+    },
+    {
+      "id": "FJ3156",
+      "name": "Twelfth thoracic vertebra",
+      "kind": "bone",
+      "triangles": 2772
+    },
+    {
+      "id": "FJ3211",
+      "name": "Intervertebral disk",
+      "kind": "disc",
+      "triangles": 3476
+    },
+    {
+      "id": "FJ3157",
+      "name": "First lumbar vertebra",
+      "kind": "bone",
+      "triangles": 2972
+    },
+    {
+      "id": "FJ3212",
+      "name": "Intervertebral disk of first lumbar vertebra",
+      "kind": "disc",
+      "triangles": 3498
+    },
+    {
+      "id": "FJ3159",
+      "name": "Second lumbar vertebra",
+      "kind": "bone",
+      "triangles": 3214
+    },
+    {
+      "id": "FJ3214",
+      "name": "Intervertebral disk of second lumbar vertebra",
+      "kind": "disc",
+      "triangles": 3406
+    },
+    {
+      "id": "FJ3162",
+      "name": "Third lumbar vertebra",
+      "kind": "bone",
+      "triangles": 3272
+    },
+    {
+      "id": "FJ3215",
+      "name": "Intervertebral disk of third lumbar vertebra",
+      "kind": "disc",
+      "triangles": 3454
+    },
+    {
+      "id": "FJ3165",
+      "name": "Fourth lumbar vertebra",
+      "kind": "bone",
+      "triangles": 3512
+    },
+    {
+      "id": "FJ3216",
+      "name": "Intervertebral disk of fourth lumbar vertebra",
+      "kind": "disc",
+      "triangles": 3512
+    },
+    {
+      "id": "FJ3168",
+      "name": "Fifth lumbar vertebra",
+      "kind": "bone",
+      "triangles": 3892
+    },
+    {
+      "id": "FJ3217",
+      "name": "Intervertebral disk of fifth lumbar vertebra",
+      "kind": "disc",
+      "triangles": 3498
+    },
+    {
+      "id": "FJ3393",
+      "name": "Sacrum",
+      "kind": "bone",
+      "triangles": 9922
+    }
+  ]
+}

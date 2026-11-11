@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.git/
+.vercel/
+.env*
+.taste-skill/
+qa/
+scripts/
+README.md

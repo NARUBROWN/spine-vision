@@ -1,0 +1,23 @@
+{
+  "name": "spine-vision",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 4175 --strictPort",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4175 --strictPort",
+    "check": "node --check app.js && node --check spine-model.js",
+    "model:build": "python3 scripts/prepare-spine-model.py && node scripts/render-spine-poster.mjs"
+  },
+  "devDependencies": {
+    "@resvg/resvg-js": "2.6.2",
+    "vite": "8.3.7"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "dependencies": {
+    "three": "0.187.0"
+  }
+}
