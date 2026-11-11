@@ -1,3 +1,4 @@
+import { t } from "./i18n.js";
 import {
   ACESFilmicToneMapping,
   DirectionalLight,
@@ -14,7 +15,7 @@ import {
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 
 const BASE_YAW = -1.03;
-const BASE_ROLL = -0.23;
+const BASE_ROLL = 0;
 
 // 렌더링이 불가능한 환경에서는 같은 원본 모델로 만든 정적 그림을 유지합니다.
 export async function initSpineModel({ host, stage, isPaused }) {
@@ -32,7 +33,7 @@ export async function initSpineModel({ host, stage, isPaused }) {
     });
   } catch {
     host.dataset.modelState = "fallback";
-    status.textContent = "척추 모델";
+    status.textContent = t("modelStatic");
     canvas.hidden = true;
     resetButton.hidden = true;
     assemblyButton.disabled = true;
@@ -49,11 +50,11 @@ export async function initSpineModel({ host, stage, isPaused }) {
   const camera = new OrthographicCamera(-1.5, 1.5, 1.5, -1.5, 0.1, 20);
   camera.position.set(0, 0, 6);
   camera.lookAt(0, 0, 0);
-  scene.add(new HemisphereLight(0xffffff, 0x323c30, 1.7));
+  scene.add(new HemisphereLight(0xffffff, 0x494039, 1.7));
   const key = new DirectionalLight(0xfff8ec, 3.0);
   key.position.set(-3.2, 4, 5);
   scene.add(key);
-  const fill = new DirectionalLight(0xd3e8db, 1.2);
+  const fill = new DirectionalLight(0xf1dfcc, 1.2);
   fill.position.set(4, 1, -2);
   scene.add(fill);
   const sculpture = new Group();
@@ -62,12 +63,12 @@ export async function initSpineModel({ host, stage, isPaused }) {
   scene.add(sculpture);
 
   const boneMaterial = new MeshStandardMaterial({
-    color: 0xe8e5d8,
+    color: 0xf5f2e9,
     roughness: 0.84,
     metalness: 0,
   });
   const discMaterial = new MeshStandardMaterial({
-    color: 0xb5e3c4,
+    color: 0xc75035,
     roughness: 0.88,
     metalness: 0,
   });
@@ -83,14 +84,14 @@ export async function initSpineModel({ host, stage, isPaused }) {
   let targetYaw = BASE_YAW;
   let tilt = 0;
   let targetTilt = 0;
-  let spread = 0.22;
-  let targetSpread = 0.22;
-  let manualAssembly = null;
+  let spread = 0;
+  let targetSpread = 0;
+  let manualAssembly = true;
   let disposed = false;
   let aspect = 1;
 
   function updateFrustum() {
-    const halfHeight = 1.46 * (1 + spread * 0.23);
+    const halfHeight = 0.57 * (1 + spread * 0.23);
     camera.left = -halfHeight * aspect;
     camera.right = halfHeight * aspect;
     camera.top = halfHeight;
@@ -99,11 +100,7 @@ export async function initSpineModel({ host, stage, isPaused }) {
   }
 
   function scrollSpread() {
-    if (manualAssembly !== null) return manualAssembly ? 0 : 1;
-    if (isPaused()) return 0;
-    const hero = host.closest(".hero").getBoundingClientRect();
-    const distance = Math.max(140, Math.min(260, hero.height * 0.4));
-    return 0.22 * (1 - MathUtils.clamp((-hero.top + 100) / distance, 0, 1));
+    return manualAssembly ? 0 : 1;
   }
 
   function draw(now) {
@@ -251,16 +248,17 @@ export async function initSpineModel({ host, stage, isPaused }) {
     manualAssembly = true;
     assemblyButton.setAttribute("aria-pressed", "true");
     host.classList.remove("disassembled");
-    host.querySelector("#assembly-label").textContent = "연결된 가능성";
-    host.querySelector("#assembly-description").textContent =
-      "익숙한 구조 위에, 더 넓은 가능성을 쌓습니다.";
+    host.querySelector("#assembly-label").textContent = t("assembled");
+    host.querySelector("#assembly-description").textContent = t(
+      "assembledDescription",
+    );
     schedule();
   }
   resetButton.addEventListener("click", reset);
   canvas.addEventListener("webglcontextlost", (event) => {
     event.preventDefault();
     host.dataset.modelState = "fallback";
-    status.textContent = "척추 모델";
+    status.textContent = t("modelStatic");
     resetButton.hidden = true;
     if (frameId) cancelAnimationFrame(frameId);
     frameId = 0;
@@ -300,18 +298,18 @@ export async function initSpineModel({ host, stage, isPaused }) {
     manualAssembly =
       host.dataset.assemblyMode === "manual"
         ? assemblyButton.getAttribute("aria-pressed") === "true"
-        : null;
+        : true;
     spread = scrollSpread();
     yaw = targetYaw;
     resize();
     renderer.render(scene, camera);
     host.dataset.modelState = "ready";
-    status.textContent = "드래그로 회전";
+    status.textContent = t("modelDrag");
     resetButton.hidden = false;
     schedule();
   } catch {
     host.dataset.modelState = "fallback";
-    status.textContent = "척추 모델";
+    status.textContent = t("modelStatic");
     canvas.hidden = true;
     resetButton.hidden = true;
     sizeObserver.disconnect();

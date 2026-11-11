@@ -1,0 +1,20 @@
+KayKit Character Pack: Adventurers 1.0
+Author: Kay Lousberg
+License: Creative Commons Zero (CC0)
+https://creativecommons.org/publicdomain/zero/1.0/
+https://github.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0
+
+Original source revision: 672074b73ba276876a19e8816ecdc5241817ab47
+Included characters: Knight, Mage, Rogue, Rogue_Hooded.
+The original author license is preserved in LICENSE.txt.
+Source URLs and source/output SHA-256 checksums are in manifest.json.
+
+Spine Vision removes animation clips and their unused binary buffers to reduce
+file size. Geometry, skinning, textures, and original character clothing remain.
+At runtime we hide optional weapons and hand props, lower the arms, raise the
+heads toward the sun, and vary scale. The two front figures use distinct hair
+and clothing colors through a material shader; original textures are unchanged.
+Mouse tracking keeps each body fixed and only moves the head within a natural
+rotation range. Targets beyond that range, and pointer exit, restore the sun gaze.
+The sun and its halo float together within the visible canvas bounds.
+The sun, lighting, ground, and shadows are composed in Three.js.

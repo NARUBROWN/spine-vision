@@ -1,0 +1,7 @@
+Official product branding used to identify Spine and Spine Cloud.
+
+Spine logo: existing official asset, spine-logo.png.
+Spine Cloud logo and outlined wordmark: downloaded without modification from
+https://spinecloud.dev/spinecloud-logo.svg
+Retrieved 2026-11-11.
+The supplied green symbol and wordmark letterforms are preserved.

@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Knight",
+    "source": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0/672074b73ba276876a19e8816ecdc5241817ab47/addons/kaykit_character_pack_adventures/Characters/gltf/Knight.glb",
+    "sourceSHA256": "60428e3abc09ba83e595d256e3af8c5c976b46cdae599f0802fc82b4a3445168",
+    "outputSHA256": "f26a3ba722938831c16d720abfa6db328565ea968aa27f643fb235702f7588df",
+    "bytes": 380284
+  },
+  {
+    "name": "Mage",
+    "source": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0/672074b73ba276876a19e8816ecdc5241817ab47/addons/kaykit_character_pack_adventures/Characters/gltf/Mage.glb",
+    "sourceSHA256": "cf898585da33fab50c724d31605fb931eb2912e6d2280092141e98ca81ad507d",
+    "outputSHA256": "69bf61ac869d0292acb53064b93299d7a389cc7274456d2d4fd3faaadbe7c147",
+    "bytes": 310832
+  },
+  {
+    "name": "Rogue",
+    "source": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0/672074b73ba276876a19e8816ecdc5241817ab47/addons/kaykit_character_pack_adventures/Characters/gltf/Rogue.glb",
+    "sourceSHA256": "e825437cd4d2ee9c1960b517a74a69101e33eb409ae7fa8cedc7134a998fbb7d",
+    "outputSHA256": "bd74b1b75b97cd2af93554f83598fec776d8247ff507a053d9937a61a46eba2b",
+    "bytes": 337388
+  },
+  {
+    "name": "Rogue_Hooded",
+    "source": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0/672074b73ba276876a19e8816ecdc5241817ab47/addons/kaykit_character_pack_adventures/Characters/gltf/Rogue_Hooded.glb",
+    "sourceSHA256": "93e6e25213009952276d9cf34f5d96a243767334c66f280db0433ddfabb91545",
+    "outputSHA256": "fea22b3983f92b1688861c02b1ff2b355c3c03d2b101252796dacff3a8fc5391",
+    "bytes": 318960
+  }
+]

@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#151715" />
-    <title>Spine Vision — 세상의 모든 발명가를 위해</title>
+    <meta name="theme-color" content="#202426" />
+    <title>Spine Vision — 세상의 모든 모험가를 위해</title>
     <meta
       name="description"
       content="기술에 장벽이 없어야 하니까. 익숙한 개발 경험으로 더 빠르고 가벼운 기술을 누리고, 누구나 자신의 아이디어를 세상에 공개할 수 있도록. Spine과 Spine Cloud의 이야기."
@@ -25,7 +25,7 @@
     <meta property="og:locale" content="ko_KR" />
     <meta
       property="og:title"
-      content="Spine Vision — 세상의 모든 발명가를 위해"
+      content="Spine Vision — 세상의 모든 모험가를 위해"
     />
     <meta
       property="og:description"
@@ -46,21 +46,22 @@
             width="1024"
             height="261"
             alt="Spine" /></span
-        ><span class="brand-label">vision</span></a
+        ><span class="brand-label">Vision</span></a
       >
       <nav aria-label="주요 메뉴">
         <a href="#why">탄생 배경</a><a href="#spine">Spine</a
         ><a href="#cloud">Spine Cloud</a><a href="#future">우리의 방향</a>
       </nav>
-      <button
-        class="motion-toggle"
-        type="button"
-        aria-pressed="false"
-        aria-label="움직임 멈추기"
+      <label class="language-control"
+        ><span class="sr-only" data-i18n="language">언어 선택</span
+        ><select id="language" aria-label="언어 선택">
+          <option value="ko">한국어</option>
+          <option value="en">English</option>
+          <option value="ja">日本語</option>
+          <option value="zh-Hans">简体中文</option>
+          <option value="zh-Hant">繁體中文</option>
+        </select></label
       >
-        <span class="pause-icon" aria-hidden="true">Ⅱ</span
-        ><span class="motion-label">움직임 멈추기</span>
-      </button>
     </header>
     <main id="main">
       <section class="hero frame" aria-labelledby="hero-title">
@@ -77,9 +78,6 @@
           >
           <div class="hero-foot">
             <p>더 나은 기술이,<br />더 많은 사람에게.</p>
-            <span aria-hidden="true" class="tiny-spine"
-              ><i></i><i></i><i></i><i></i
-            ></span>
           </div>
         </div>
         <div
@@ -150,15 +148,35 @@
               이미 배운 것<span>컨트롤러, 서비스, 의존성 주입</span>
             </div>
             <div class="responsibility-middle">
-              <div class="responsibility-spine" aria-hidden="true">
-                <i></i><i></i><i></i><i></i>
+              <div class="product-role spine-role">
+                <h3>
+                  <span class="brand-logo role-spine-logo"
+                    ><img
+                      src="/branding/spine-logo.png"
+                      width="1024"
+                      height="261"
+                      alt="Spine"
+                  /></span>
+                </h3>
+                <ul>
+                  <li data-i18n="familiarUse">익숙한 사용성</li>
+                  <li data-i18n="responsibility">명시적인 책임</li>
+                  <li data-i18n="readable">읽을 수 있는 실행</li>
+                </ul>
               </div>
-              <div class="responsibility-names">
-                <span>익숙한 사용성</span><span>명시적인 책임</span
-                ><span>읽을 수 있는 실행</span><span>가벼운 시작</span>
-              </div>
-              <div class="product-brackets">
-                <span>Spine</span><span>Spine Cloud</span>
+              <div class="product-role cloud-role">
+                <h3>
+                  <img
+                    class="role-cloud-logo"
+                    src="/branding/spinecloud-logo.svg"
+                    width="832"
+                    height="180"
+                    alt="Spine Cloud"
+                  />
+                </h3>
+                <ul>
+                  <li data-i18n="lightStart">가벼운 시작</li>
+                </ul>
               </div>
             </div>
             <div class="service-node">
@@ -171,7 +189,12 @@
 
       <section id="spine" class="framework frame" aria-labelledby="spine-title">
         <div class="section-heading">
-          <h2 id="spine-title">익숙한 뼈대,<br />가벼운 실행</h2>
+          <h2 id="spine-title" class="symbol-title">
+            <span class="heading-text">익숙한 뼈대,<br />가벼운 실행</span
+            ><span class="floating-symbol" data-symbol="bone" aria-hidden="true"
+              ><span class="symbol-fallback">🦴</span><canvas></canvas
+            ></span>
+          </h2>
           <div>
             <p>
               컨트롤러, 서비스와 생성자 주입.<br />익숙한 개발 구조를 Go 위에서
@@ -222,14 +245,11 @@
               </p>
             </div>
             <pre><code id="stage-code">func (c *UserController) GetUser(
-    id path.Int,
-) (*User, error) {
-    return c.service.Find(int(id))
+    id input.Path[int],
+) (httpx.Response[*User], error) {
+    user, err := c.service.Find(*id)
+    return httpx.Response[*User]{Body: user}, err
 }</code></pre>
-          </div>
-          <div class="exhibit-footer">
-            <span>실행 흐름을 단순화한 설명용 예시</span
-            ><span aria-hidden="true">의도를 읽을 수 있는 코드</span>
           </div>
         </div>
         <div class="framework-statement">
@@ -255,12 +275,18 @@
 
       <section
         id="cloud"
-        class="cloud mint-field"
+        class="cloud cloud-field"
         aria-labelledby="cloud-title"
       >
         <div class="frame cloud-grid">
           <div class="cloud-copy">
-            <h2 id="cloud-title">작은 시작도,<br />세상에 닿도록</h2>
+            <div class="cloud-heading">
+              <h2 id="cloud-title">작은 움직임도<br />온 세상이 다 알도록</h2>
+              <div class="cloud-globe" aria-hidden="true">
+                <canvas id="globe-canvas"></canvas
+                ><span class="globe-fallback"></span>
+              </div>
+            </div>
             <p>
               학생도, 처음 코딩을 배우는 사람도,<br />가진 것 없이 꿈을 시작하는
               사람도.
@@ -274,11 +300,13 @@
               href="https://spinecloud.dev"
               target="_blank"
               rel="noopener"
-              >Spine Cloud 만나보기 <span aria-hidden="true">↗</span></a
+              >Spine Cloud 만나보기 (한국어 페이지)
+              <span aria-hidden="true">↗</span></a
             >
             <p class="beta-note">
               오픈 베타 기간에는 무료로 제공합니다.<br />배포에는 Preview CLI가
-              필요합니다.<br /><a
+              필요합니다.<br />현재 한국 지역을 대상으로 오픈 베타를 실시하고
+              있습니다.<br /><a
                 href="https://home.spinecloud.dev/faq"
                 target="_blank"
                 rel="noopener"
@@ -318,7 +346,16 @@ spine deploy</code></pre>
             </ol>
             <div class="deploy-bottom">
               <button class="button primary" id="deploy-play" type="button">
-                흐름 재생하기 <span aria-hidden="true">↗</span>
+                <span class="deploy-play-label">흐름 재생하기</span
+                ><svg
+                  class="deploy-icon"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M8 5l11 7-11 7z"></path>
+                </svg>
               </button>
               <p id="deploy-status" role="status">
                 실제 배포 없이 과정을 살펴봅니다.
@@ -330,11 +367,11 @@ spine deploy</code></pre>
 
       <section id="future" class="future frame" aria-labelledby="future-title">
         <div class="future-intro">
-          <h2 id="future-title">누구나 만들 수<br />있는 쪽으로</h2>
+          <h2 id="future-title">누구나 도전할 수<br />있는 세상으로</h2>
           <p>
             Spine CLI로 첫 구조를 만들고, AI와 함께 코드를 발전시키고, Spine
             Cloud로 결과물을 공개하는 경험. 기술을 배우는 시간과 처음 시작하는
-            비용이 발명을 가로막지 않기를 바랍니다.
+            비용이 새로운 발명을 가로막지 않기를 바랍니다.
           </p>
         </div>
         <div class="perspective-exhibit" data-ui>
@@ -350,14 +387,42 @@ spine deploy</code></pre>
             </button>
           </div>
           <div class="perspective-body">
-            <div class="contract-art" aria-hidden="true">
-              <span>아이디어</span>
-              <div><i></i><i></i><i></i><i></i><i></i></div>
-              <span>현실</span>
+            <div class="contract-visual">
+              <ol
+                class="creation-path"
+                aria-label="아이디어에서 공개까지"
+                data-i18n-aria="creationPath"
+              >
+                <li>
+                  <span class="path-number">01</span
+                  ><span id="art-start">아이디어</span
+                  ><small id="path-first">만들고 싶은 것을 정합니다</small>
+                </li>
+                <li>
+                  <span class="path-number">02</span
+                  ><span id="art-build">Spine CLI</span
+                  ><small id="path-build">프로젝트의 첫 구조를 만듭니다</small>
+                </li>
+                <li>
+                  <span class="path-number">03</span
+                  ><span id="art-end">Spine Cloud</span
+                  ><small id="path-publish">실행하고 세상에 공개합니다</small>
+                </li>
+              </ol>
+              <p id="art-caption" class="art-caption">
+                아이디어 → CLI로 구조 만들기 → 실행 → 공개
+              </p>
             </div>
             <div class="perspective-copy" aria-live="polite" aria-atomic="true">
-              <h3 id="perspective-title">
-                시작하는 마음에,<br />기술이 답할 수 있도록.
+              <h3 id="perspective-title" class="symbol-title">
+                <span class="heading-text"
+                  >시작하는 마음에,<br />기술이 답할 수 있도록.</span
+                ><span
+                  class="floating-symbol"
+                  data-symbol="heart"
+                  aria-hidden="true"
+                  ><span class="symbol-fallback">♥</span><canvas></canvas
+                ></span>
               </h3>
               <p id="perspective-description">
                 학생도, 코딩을 처음 배우는 사람도. CLI로 프로젝트의 첫 구조를
@@ -392,7 +457,7 @@ spine deploy</code></pre>
       <section class="closing light-field" aria-labelledby="closing-title">
         <div class="frame">
           <div class="closing-top">
-            <h2 id="closing-title">세상의 모든<br />발명가를 위해</h2>
+            <h2 id="closing-title">세상의 모든<br />모험가를 위해</h2>
             <div>
               <p>
                 더 나은 기술을 배우기 쉽게, 사용하기 쉽게.<br />다음 아이디어는
@@ -407,6 +472,23 @@ spine deploy</code></pre>
               >
             </div>
           </div>
+          <figure
+            class="sunrise-exhibit"
+            role="img"
+            aria-label="다섯 모험가가 앞쪽을 비운 U자 대형으로 모여 태양을 올려다보는 3D 장면"
+            data-i18n-aria="sunriseLabel"
+          >
+            <div class="sunrise-fallback" aria-hidden="true">
+              <div class="fallback-sun"></div>
+              <div class="fallback-people">
+                <i></i><i></i><i></i><i></i><i></i>
+              </div>
+            </div>
+            <canvas id="sunrise-canvas" aria-hidden="true"></canvas>
+            <figcaption data-i18n="sunriseCaption">
+              서로 다른 시작, 함께 바라보는 가능성.
+            </figcaption>
+          </figure>
         </div>
       </section>
     </main>
@@ -431,19 +513,7 @@ spine deploy</code></pre>
           </nav>
         </div>
         <p class="model-attribution">
-          BodyParts3D, © The Database Center for Life Science licensed under
-          <a
-            href="https://creativecommons.org/licenses/by/4.0/"
-            target="_blank"
-            rel="noopener"
-            >CC Attribution 4.0 International</a
-          >. 좌표, 재질과 형식을 수정했습니다.
-          <a
-            href="/models/bodyparts3d/NOTICE.txt"
-            target="_blank"
-            rel="noopener"
-            >모델 출처 보기 ↗</a
-          >
+          <a href="/licenses.html" data-i18n="licensesLink">라이선스와 출처</a>
         </p>
       </div>
     </footer>
